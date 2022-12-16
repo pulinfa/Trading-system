@@ -403,7 +403,7 @@ func main() {
 
 		sum = sum + ti
 
-		t := random(1, 3)
+		t := random(4, 6)
 		t64 := int64(t)
 
 		time.Sleep(time.Duration(t64) * time.Second)

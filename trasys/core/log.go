@@ -38,7 +38,7 @@ func WriteLog(log Log) {
 		s = "dec"
 	} else if log.Tp == 3 {
 		s = "new"
-	} else {
+	} else if log.Tp == 4 {
 		s = "delete"
 	}
 

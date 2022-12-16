@@ -356,7 +356,7 @@ func main() {
 	PrintRecords()
 
 	// 4. 用户输入命令进行操作
-	for i := 0; i < 20; i++ {
+	for i := 0; i < 50; i++ {
 		//获取用户指令
 		fmt.Printf(">>> ")
 		var inOrOut int //交易类型，买入或者卖出
@@ -399,7 +399,7 @@ func main() {
 
 		ti = time.Now().Unix() - ti //获取查询响应时间
 
-		t := random(1, 3)
+		t := random(1, 2)
 		t64 := int64(t)
 
 		time.Sleep(time.Duration(t64) * time.Second)

@@ -5,6 +5,7 @@
 # COUNTER='expr $COUNTER+1'
 # done
 
+go run testserver.go 1 > /dev/null &
 go run testserver.go 2 > /dev/null &
 go run testserver.go 3 > /dev/null &
 go run testserver.go 4 > /dev/null &
@@ -13,8 +14,8 @@ go run testserver.go 6 > /dev/null &
 go run testserver.go 7 > /dev/null &
 go run testserver.go 8 > /dev/null &
 go run testserver.go 9 > /dev/null &
-
 go run testserver.go 10 > /dev/null &
+
 go run testserver.go 11 > /dev/null &
 go run testserver.go 12 > /dev/null &
 go run testserver.go 13 > /dev/null &
@@ -24,8 +25,8 @@ go run testserver.go 16 > /dev/null &
 go run testserver.go 17 > /dev/null &
 go run testserver.go 18 > /dev/null &
 go run testserver.go 19 > /dev/null &
-
 go run testserver.go 20 > /dev/null &
+
 go run testserver.go 21 > /dev/null &
 go run testserver.go 22 > /dev/null &
 go run testserver.go 23 > /dev/null &
@@ -59,7 +60,6 @@ go run testserver.go 48 > /dev/null &
 go run testserver.go 49 > /dev/null &
 go run testserver.go 50 > /dev/null &
 
-go run testserver.go 50 > /dev/null &
 go run testserver.go 51 > /dev/null &
 go run testserver.go 52 > /dev/null &
 go run testserver.go 53 > /dev/null &
@@ -71,7 +71,6 @@ go run testserver.go 58 > /dev/null &
 go run testserver.go 59 > /dev/null &
 go run testserver.go 60 > /dev/null &
 
-go run testserver.go 60 > /dev/null &
 go run testserver.go 61 > /dev/null &
 go run testserver.go 62 > /dev/null &
 go run testserver.go 63 > /dev/null &
@@ -116,4 +115,4 @@ go run testserver.go 98 > /dev/null &
 go run testserver.go 99 > /dev/null &
 go run testserver.go 100 > /dev/null &
 
-go run testrecord.go 1
+# go run testrecord.go 1
