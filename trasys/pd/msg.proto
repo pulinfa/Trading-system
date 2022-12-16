@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./;pb";
+
+//同步用户的Uid
+message SyncUid {
+    int32 Uid = 1;
+}

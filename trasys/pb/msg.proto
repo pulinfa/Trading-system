@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./;pb";
+
+//同步用户的Uid
+message SyncUid {
+    int32 Uid = 1;
+}
+
+//拉取客户的持仓列表
+message PullHoldingInfos {
+    string Cid = 1;
+}
+
+//响应客户的持仓列表
+message AckHoldingInfos {
+    repeated AckHoldingInfo HInfo = 1;
+}
+
+//客户持仓
+message AckHoldingInfo {
+    string ClientId = 1;
+    string exchangeType = 2;        //市场，1表示沪，2表示深
+	string stockCode = 3;           //代码	沪市：600000-600099，深市：000001-000100
+	double lastPrice = 4;          //最新价格 10.00-1000.00之间的随机数
+    int32 holdAmount = 5;           //持仓数量
+	double marketValue = 6;        //市值 holdAmount * stock.GetLastPrice()
+}
+
+//用户执行交易命令
+message TradingInfo {
+    string ClientId = 1;
+    string exchangeType = 2;
+    string stockCode = 3;
+    TradingType traType = 4;
+    int32 number = 5;
+}
+
+//交易方向
+enum TradingType {
+    BUYIN = 0;
+    SELLOUT = 1;
+}
+
+//用户执行命令之后的结果，返回的是一个股票，因为数量和用户的情况在客户端是相同的
+message ChangeStock {
+    ResultType rstType = 1;
+    string exchangeType = 2;
+    string stockCode = 3;
+    double lastPrice = 4;
+    int32 number = 5;
+}
+
+// 没有这只股票（0）：210，新增记录（1）：211，增加值（2）：212，减少值（3）213，
+// 删除记录（4）: 214，没有持股可以卖（5）:215，没有足量的持股（6）:216
+enum ResultType {
+    NOSTOCK = 0;
+    ADDSTOCK = 1;
+    ADDVALUE = 2;
+    DECVALUE = 3;
+    DELSTOCK = 4;
+    NORECORD = 5;
+    NOEHOUGH = 6;
+}
+
+//拉取历史记录
+message PullHistory {
+    string Cid = 1;
+}
+
+//历史交易记录
+message HistoryRecord {
+    string hisRcd = 1;
+}
